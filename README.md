@@ -1,4 +1,4 @@
-# 紫微晶集 · Crystal Curation
+# tunqigua · Crystal Curation
 
 一个面向晶石爱好者的静态网站原型，使用 HTML5、CSS3 和原生 JavaScript 构建。
 

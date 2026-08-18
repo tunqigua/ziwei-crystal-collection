@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#6f54b7" />
-  <title>tunqigua · 找到与你共振的晶石</title>
+  <title>tunqigua · 慢慢挑一颗喜欢的晶石</title>
   <style>
     :root {
       --ink: #27202f;
@@ -94,8 +94,9 @@
     .primary-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 27px rgba(99,69,159,.27); }
     .ghost-btn { color: #604c78; background: #f1ebf8; }
     .ghost-btn:hover { transform: translateY(-2px); background: #e9def5; }
-    .hero-meta { display: flex; gap: 25px; margin-top: 39px; color: #a195a9; font-size: 11px; }
-    .hero-meta strong { color: #5e5265; display: block; font-size: 17px; font-weight: 600; margin-bottom: 5px; }
+    .hero-meta { display: flex; gap: 12px; margin-top: 34px; color: #978c9e; font-size: 10px; }
+    .hero-meta div { max-width: 135px; padding-left: 12px; border-left: 2px solid #dfd3eb; line-height: 1.45; }
+    .hero-meta strong { color: #5e5265; display: block; font-size: 12px; font-weight: 700; margin-bottom: 4px; }
 
     .hero-visual { height: 423px; position: relative; }
     .hero-visual::before { content: ""; position: absolute; width: 310px; height: 310px; right: 47px; top: 37px; border-radius: 50%; background: radial-gradient(circle at 35% 24%, rgba(255,255,255,.62), transparent 24%), linear-gradient(150deg, #dfd0f3 4%, #a37bc6 46%, #4f327c 100%); box-shadow: 0 25px 60px rgba(83,50,115,.28); opacity: .97; }
@@ -187,6 +188,15 @@
     .note-item b { display: block; color: #f4ecf8; font-family: var(--display); font-size: 14px; margin-bottom: 8px; }
     .note-item p { margin: 0; color: #b9a9c5; font-size: 10px; line-height: 1.7; }
 
+    .people-notes { margin-top: 68px; }
+    .people-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .people-card { min-height: 184px; padding: 22px; border: 1px solid #ebe5ef; border-radius: 18px; background: rgba(255,255,255,.78); display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(64,39,83,.05); }
+    .people-card:nth-child(2) { transform: rotate(.7deg); background: #f5eff9; }
+    .people-card p { margin: 0; color: #62596a; font-family: var(--display); font-size: 14px; line-height: 1.9; }
+    .people-who { display: flex; align-items: center; gap: 9px; margin-top: 18px; color: #776a80; font-size: 10px; }
+    .people-avatar { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: #e9def3; color: #705394; font-weight: 700; }
+    .people-who span { display: block; color: #aaa0ae; margin-top: 2px; }
+
     .mobile-dock { display: none; }
 
     @media (max-width: 1050px) {
@@ -196,12 +206,12 @@
     @media (max-width: 780px) {
       .page { padding: 0 17px 96px; } .topbar { height: auto; padding: 18px 0; flex-wrap: wrap; gap: 14px; } .brand { min-width: auto; } .nav { order: 3; flex-basis: 100%; overflow-x: auto; gap: 24px; padding-bottom: 2px; scrollbar-width: none; } .nav::-webkit-scrollbar { display: none; } .nav a { font-size: 12px; } .top-actions { margin-left: auto; } .search { width: 38px; padding: 0 10px; } .search input { display: none; } .search:focus-within { width: 170px; } .search:focus-within input { display: block; }
       .hero { display: flex; flex-direction: column; align-items: stretch; padding: 49px 0 40px; } h1 { font-size: 49px; } .hero-visual { height: 355px; margin: 8px 0 0; } .hero-visual::before { width: 245px; height: 245px; right: 16%; } .hero-visual::after { width: 285px; right: 6%; top: 131px; } .card-main { width: 145px; right: 15%; bottom: 3px; } .card-main .crystal-art { height: 124px; } .card-float { width: 122px; left: 7%; bottom: 41px; } .card-float .crystal-art { height: 105px; } .glow-word { font-size: 46px; right: 23%; top: 117px; }
-      .intent-grid { grid-template-columns: repeat(2, 1fr); } .guide-detail { grid-template-columns: 1fr; gap: 19px; } .guide-intro { border-right: 0; border-bottom: 1px solid #e5daed; padding: 3px 0 16px; } .shop-layout { grid-template-columns: 1fr; } .side-stack { display: grid; grid-template-columns: 1fr 1fr; } .filter-tabs { overflow-x: auto; scrollbar-width: none; white-space: nowrap; } .filter-tabs::-webkit-scrollbar { display: none; } .product-grid { grid-template-columns: repeat(3, minmax(145px, 1fr)); overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; } .product-grid::-webkit-scrollbar { display: none; } .product-card { min-width: 145px; } .product-media { height: 180px; } .selection-note { grid-template-columns: 1fr; gap: 19px; padding: 22px; } .note-grid { grid-template-columns: repeat(3, 1fr); }
+      .intent-grid { grid-template-columns: repeat(2, 1fr); } .guide-detail { grid-template-columns: 1fr; gap: 19px; } .guide-intro { border-right: 0; border-bottom: 1px solid #e5daed; padding: 3px 0 16px; } .shop-layout { grid-template-columns: 1fr; } .side-stack { display: grid; grid-template-columns: 1fr 1fr; } .filter-tabs { overflow-x: auto; scrollbar-width: none; white-space: nowrap; } .filter-tabs::-webkit-scrollbar { display: none; } .product-grid { grid-template-columns: repeat(3, minmax(145px, 1fr)); overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; } .product-grid::-webkit-scrollbar { display: none; } .product-card { min-width: 145px; } .product-media { height: 180px; } .selection-note { grid-template-columns: 1fr; gap: 19px; padding: 22px; } .note-grid { grid-template-columns: repeat(3, 1fr); } .people-grid { grid-template-columns: 1fr 1fr; } .people-card:last-child { grid-column: 1 / -1; min-height: 150px; }
       .story-strip { margin-top: 52px; padding: 25px; align-items: flex-start; flex-direction: column; gap: 20px; } .story-strip::before { right: -80px; } .strip-actions { align-self: flex-start; } footer { flex-direction: column; gap: 20px; align-items: flex-start; }
       .mobile-dock { position: fixed; display: flex; align-items: center; justify-content: space-around; gap: 4px; z-index: 8; left: 12px; right: 12px; bottom: 12px; padding: 9px 7px 8px; border: 1px solid rgba(255,255,255,.82); border-radius: 18px; background: rgba(255,255,255,.84); backdrop-filter: blur(18px); box-shadow: 0 12px 35px rgba(61,35,83,.16); } .mobile-dock a { color: #9b90a3; display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 59px; font-size: 9px; } .mobile-dock a span { color: #7353a7; font-size: 18px; line-height: 1; } .mobile-dock a.active { color: #5d4388; font-weight: 700; }
     }
     @media (max-width: 480px) {
-      h1 { font-size: 42px; } .hero-desc { font-size: 13px; } .hero-meta { gap: 17px; } .hero-meta strong { font-size: 15px; } .intent-card { padding: 16px; min-height: 135px; } .intent-card h3 { font-size: 15px; } .section-heading { align-items: flex-start; gap: 10px; } .section-heading h2 { font-size: 25px; } .section-heading .text-link { display: none; } .filter-tabs { gap: 17px; } .side-stack { display: flex; } .product-grid { grid-template-columns: repeat(3, 158px); } .product-media { height: 168px; } .guide-steps { gap: 8px; } .guide-step { padding: 2px; } .guide-step h4 { font-size: 13px; } .note-grid { grid-template-columns: 1fr; } .note-item { min-height: auto; } .footer-links { flex-wrap: wrap; gap: 12px 17px; }
+      h1 { font-size: 42px; } .hero-desc { font-size: 13px; } .hero-meta { gap: 9px; } .hero-meta div { padding-left: 8px; } .intent-card { padding: 16px; min-height: 135px; } .intent-card h3 { font-size: 15px; } .section-heading { align-items: flex-start; gap: 10px; } .section-heading h2 { font-size: 25px; } .section-heading .text-link { display: none; } .filter-tabs { gap: 17px; } .side-stack { display: flex; } .product-grid { grid-template-columns: repeat(3, 158px); } .product-media { height: 168px; } .guide-steps { gap: 8px; } .guide-step { padding: 2px; } .guide-step h4 { font-size: 13px; } .note-grid { grid-template-columns: 1fr; } .note-item { min-height: auto; } .people-notes { margin-top: 50px; } .people-grid { grid-template-columns: 1fr; } .people-card, .people-card:last-child { grid-column: auto; min-height: 160px; } .people-card:nth-child(2) { transform: none; } .footer-links { flex-wrap: wrap; gap: 12px 17px; }
     }
   </style>
 </head>
@@ -253,10 +263,10 @@
     <header class="topbar">
       <a class="brand" href="#top" aria-label="tunqigua首页">
         <span class="brand-mark"></span>
-        <span class="brand-copy"><span class="brand-name">tunqigua</span><span class="brand-sub">CRYSTAL CURATION</span></span>
+        <span class="brand-copy"><span class="brand-name">tunqigua</span><span class="brand-sub">CRYSTALS &amp; SMALL THINGS</span></span>
       </a>
       <nav class="nav" aria-label="主导航">
-        <a class="active" href="#discover">发现灵感</a>
+        <a class="active" href="#discover">随便看看</a>
         <a href="#guide">水晶图鉴</a>
         <a href="#market">晶石集市</a>
         <a href="#join">入驻成为主理人</a>
@@ -264,48 +274,48 @@
       <div class="top-actions">
         <label class="search" aria-label="搜索晶石"><span>⌕</span><input id="searchInput" type="search" placeholder="搜索晶石 / 关键词" /></label>
         <button class="icon-btn" id="bagButton" aria-label="购物袋">♧<span class="bag-count" id="bagCount">0</span></button>
-        <button class="user-btn" id="userButton"><span class="avatar">我</span><span>我的晶室</span></button>
+        <button class="user-btn" id="userButton"><span class="avatar">我</span><span>我的收藏</span></button>
       </div>
     </header>
 
     <main id="top">
       <section class="hero" id="discover">
         <div class="hero-copy">
-          <div class="eyebrow">THE INNER UNIVERSE</div>
-          <h1>找到<br /><em>与你共振</em><br />的那一颗</h1>
-          <p class="hero-desc">从此刻的心情出发，探索每一颗晶石背后的能量与故事。让选择水晶，变成一次温柔的自我看见。</p>
-          <div class="hero-actions"><button class="primary-btn" id="startButton">开始探索晶石&nbsp; →</button><a class="ghost-btn" href="#guide">浏览水晶图鉴</a></div>
-          <div class="hero-meta"><div><strong>7,800+</strong>天然晶石</div><div><strong>126</strong>位独立主理人</div><div><strong>4.9</strong>共振好评</div></div>
+          <div class="eyebrow">TUNQIGUA · 慢慢挑</div>
+          <h1>先别急着<br /><em>研究功效</em><br />看看喜欢哪颗</h1>
+          <p class="hero-desc">选水晶不用背知识点。喜欢颜色、在意手感，或者只是想给桌面添一点亮光，都可以。我们把尺寸、实拍和店主的话放在前面，你慢慢看。</p>
+          <div class="hero-actions"><button class="primary-btn" id="startButton">随便逛逛&nbsp; →</button><a class="ghost-btn" href="#guide">第一次买看这里</a></div>
+          <div class="hero-meta"><div><strong>一物一拍</strong>先看清纹理再决定</div><div><strong>慢慢挑</strong>不按“功效”替你下结论</div><div><strong>可以追问</strong>尺寸和细节直接问店主</div></div>
         </div>
         <div class="hero-visual" aria-label="紫色晶石视觉展示">
           <span class="moon"></span><span class="star one">✦</span><span class="star two">✧</span><span class="star three">✦</span>
-          <div class="visual-label"><small>今日共振主题</small><b>安定 · 清醒</b></div>
-          <div class="glow-word">inner</div>
-          <div class="crystal-card card-float"><svg class="crystal-art" role="img" aria-label="紫色晶石"><use href="#art-amethyst"></use></svg><div class="tag">CALM · 安定</div><strong>紫水晶簇</strong></div>
-          <div class="crystal-card card-main"><svg class="crystal-art" role="img" aria-label="天然水晶饰品"><use href="#art-moonstone"></use></svg><div class="tag">CLARITY · 清醒</div><strong>月光石手链</strong></div>
+          <div class="visual-label"><small>店主今天想说</small><b>喜欢，比懂更重要</b></div>
+          <div class="glow-word">slowly</div>
+          <div class="crystal-card card-float"><svg class="crystal-art" role="img" aria-label="紫色晶石"><use href="#art-amethyst"></use></svg><div class="tag">掌心小原石</div><strong>紫水晶簇</strong></div>
+          <div class="crystal-card card-main"><svg class="crystal-art" role="img" aria-label="天然水晶饰品"><use href="#art-moonstone"></use></svg><div class="tag">日常可佩戴</div><strong>月光石手链</strong></div>
         </div>
       </section>
 
       <section class="section" id="guide">
-        <div class="section-heading"><div><h2>你此刻，想要什么？</h2><p>从一个念头开始，为自己找到合适的能量</p></div><a class="text-link" href="#market">探索全部晶石&nbsp; →</a></div>
+        <div class="section-heading"><div><h2>不懂水晶，也没关系</h2><p>先说说最近在意什么，我们只给你几个不夸张的方向</p></div><a class="text-link" href="#market">直接看全部&nbsp; →</a></div>
         <div class="intent-grid">
-          <button class="intent-card" data-intent="安定情绪"><div class="intent-icon">◌</div><h3>安定情绪</h3><p>给内心留一点柔软的空间</p></button>
-          <button class="intent-card" data-intent="专注清醒"><div class="intent-icon">☾</div><h3>专注清醒</h3><p>整理思绪，找回自己的节奏</p></button>
-          <button class="intent-card" data-intent="关系连结"><div class="intent-icon">♡</div><h3>关系连结</h3><p>靠近爱，也更靠近真实的自己</p></button>
-          <button class="intent-card" data-intent="丰盛好运"><div class="intent-icon">✦</div><h3>丰盛好运</h3><p>为新的可能性打开一扇门</p></button>
+          <button class="intent-card" data-intent="最近有点累"><div class="intent-icon">◌</div><h3>最近有点累</h3><p>想找件看着安静的小东西</p></button>
+          <button class="intent-card" data-intent="工作总分心"><div class="intent-icon">☾</div><h3>工作总分心</h3><p>给桌面添一点清爽和秩序</p></button>
+          <button class="intent-card" data-intent="想挑一份礼物"><div class="intent-icon">♡</div><h3>想挑一份礼物</h3><p>从对方喜欢的颜色和预算开始</p></button>
+          <button class="intent-card" data-intent="单纯觉得好看"><div class="intent-icon">✦</div><h3>单纯觉得好看</h3><p>这个理由已经完全足够了</p></button>
         </div>
         <div class="guide-detail">
-          <div class="guide-intro"><div class="kicker">A LITTLE GUIDE</div><h3>不懂专业名词，也能选到喜欢的。</h3><p>我们把复杂的产地、寓意和状态整理成更好懂的提示，先从你的感受开始。</p></div>
+          <div class="guide-intro"><div class="kicker">第一次买也别紧张</div><h3>先看实拍，再看尺寸，最后才看寓意。</h3><p>天然晶石会有纹理、棉裂和色差。它们不一定是瑕疵，但应该在下单前说清楚。</p></div>
           <div class="guide-steps">
-            <div class="guide-step"><div class="step-no">01</div><h4>先选此刻的心情</h4><p>不用想得太远，今天想被什么样的能量陪伴？</p></div>
-            <div class="guide-step"><div class="step-no">02</div><h4>再看质感与故事</h4><p>颜色、光泽、纹理，和主理人的选石理由都很重要。</p></div>
-            <div class="guide-step"><div class="step-no">03</div><h4>最后听自己的直觉</h4><p>喜欢就是一种答案，给真正让你心动的晶石留位置。</p></div>
+            <div class="guide-step"><div class="step-no">01</div><h4>先想怎么用</h4><p>日常佩戴、床头摆放，还是送给朋友？</p></div>
+            <div class="guide-step"><div class="step-no">02</div><h4>把尺寸看仔细</h4><p>手围、重量和参照物照片，比滤镜更有用。</p></div>
+            <div class="guide-step"><div class="step-no">03</div><h4>再听听店主的话</h4><p>来源、处理方式和天然痕迹，都可以直接问。</p></div>
           </div>
         </div>
       </section>
 
       <section class="section" id="market" style="padding-top: 64px;">
-        <div class="section-heading"><div><h2>今日灵感</h2><p id="intentHint">被认真挑选过的天然晶石，等待与你相遇</p></div><a class="text-link" href="#join">看看主理人的故事&nbsp; →</a></div>
+        <div class="section-heading"><div><h2>大家最近在看</h2><p id="intentHint">没有夸张的“必买”，先把尺寸、实拍和店主的话写清楚</p></div><a class="text-link" href="#join">认识这些店主&nbsp; →</a></div>
         <div class="shop-layout">
           <div class="shop-panel">
             <div class="filter-tabs" role="tablist" aria-label="晶石分类">
@@ -313,56 +323,65 @@
             </div>
             <div class="product-grid" id="productGrid">
               <article class="product-card" data-category="bracelet" data-keywords="月光石 手链 睡眠 安定">
-                <div class="product-media"><svg class="crystal-art" role="img" aria-label="月光石手链"><use href="#art-moonstone"></use></svg><span class="product-badge">编辑精选</span><button class="heart" aria-label="收藏">♡</button></div>
-                <div class="product-info"><div class="product-kicker">CLARITY / 清醒</div><div class="product-name">月光石 · 潮汐手链</div><div class="product-note">像月光一样，温柔地照见自己</div><div class="product-bottom"><span class="price"><small>¥</small>268</span><span class="seller">by Momo Studio</span></div></div>
+                <div class="product-media"><svg class="crystal-art" role="img" aria-label="月光石手链"><use href="#art-moonstone"></use></svg><span class="product-badge">可看细节图</span><button class="heart" aria-label="收藏">♡</button></div>
+                <div class="product-info"><div class="product-kicker">手围 15cm · 可改</div><div class="product-name">雾蓝月光石单圈</div><div class="product-note">珠子偏灰蓝，自然光下会有一点蓝光</div><div class="product-bottom"><span class="price"><small>¥</small>268</span><span class="seller">杭州 · momo</span></div></div>
               </article>
               <article class="product-card" data-category="raw" data-keywords="紫水晶 原石 安定 情绪">
-                <div class="product-media"><svg class="crystal-art" role="img" aria-label="紫水晶原石"><use href="#art-amethyst"></use></svg><span class="product-badge">新上架</span><button class="heart" aria-label="收藏">♡</button></div>
-                <div class="product-info"><div class="product-kicker">CALM / 安定</div><div class="product-name">紫水晶 · 晨雾原石</div><div class="product-note">一块适合放在床头的安静能量</div><div class="product-bottom"><span class="price"><small>¥</small>188</span><span class="seller">by 山野晶舍</span></div></div>
+                <div class="product-media"><svg class="crystal-art" role="img" aria-label="紫水晶原石"><use href="#art-amethyst"></use></svg><span class="product-badge">刚摆上架</span><button class="heart" aria-label="收藏">♡</button></div>
+                <div class="product-info"><div class="product-kicker">掌心大小 · 一物一图</div><div class="product-name">淡紫色小晶簇</div><div class="product-note">边缘有一处天然缺口，照片里已经标出</div><div class="product-bottom"><span class="price"><small>¥</small>188</span><span class="seller">大理 · 山野晶舍</span></div></div>
               </article>
               <article class="product-card" data-category="cluster" data-keywords="白水晶 晶簇 清醒 专注">
-                <div class="product-media"><svg class="crystal-art" role="img" aria-label="白水晶晶簇"><use href="#art-white"></use></svg><span class="product-badge">限量 8 件</span><button class="heart" aria-label="收藏">♡</button></div>
-                <div class="product-info"><div class="product-kicker">FOCUS / 专注</div><div class="product-name">白水晶 · 星河晶簇</div><div class="product-note">清透、轻盈，给空间换一口气</div><div class="product-bottom"><span class="price"><small>¥</small>399</span><span class="seller">by 清醒研究所</span></div></div>
+                <div class="product-media"><svg class="crystal-art" role="img" aria-label="白水晶晶簇"><use href="#art-white"></use></svg><span class="product-badge">只这一件</span><button class="heart" aria-label="收藏">♡</button></div>
+                <div class="product-info"><div class="product-kicker">约 8cm · 带木底座</div><div class="product-name">巴西白水晶簇</div><div class="product-note">晶尖不算特别透，但形状很完整</div><div class="product-bottom"><span class="price"><small>¥</small>399</span><span class="seller">苏州 · 小周选石</span></div></div>
               </article>
               <article class="product-card" data-category="bracelet" data-keywords="粉晶 手链 关系 连结 温柔">
-                <div class="product-media"><svg class="crystal-art" role="img" aria-label="粉晶手链"><use href="#art-rose"></use></svg><span class="product-badge">温柔推荐</span><button class="heart" aria-label="收藏">♡</button></div>
-                <div class="product-info"><div class="product-kicker">BOND / 连结</div><div class="product-name">粉晶 · 晨曦手链</div><div class="product-note">低饱和粉色，适合每天佩戴</div><div class="product-bottom"><span class="price"><small>¥</small>328</span><span class="seller">by Momo Studio</span></div></div>
+                <div class="product-media"><svg class="crystal-art" role="img" aria-label="粉晶手链"><use href="#art-rose"></use></svg><span class="product-badge">送朋友不错</span><button class="heart" aria-label="收藏">♡</button></div>
+                <div class="product-info"><div class="product-kicker">手围 14–17cm</div><div class="product-name">淡粉晶日常手串</div><div class="product-note">颜色很浅，室内看会更接近奶粉色</div><div class="product-bottom"><span class="price"><small>¥</small>328</span><span class="seller">杭州 · momo</span></div></div>
               </article>
               <article class="product-card" data-category="raw" data-keywords="黑曜石 原石 守护 边界 夜行">
-                <div class="product-media"><svg class="crystal-art" role="img" aria-label="黑曜石原石"><use href="#art-obsidian"></use></svg><span class="product-badge">主理人手选</span><button class="heart" aria-label="收藏">♡</button></div>
-                <div class="product-info"><div class="product-kicker">GROUND / 守护</div><div class="product-name">黑曜石 · 夜行原石</div><div class="product-note">沉静有力量，适合放在工作台</div><div class="product-bottom"><span class="price"><small>¥</small>218</span><span class="seller">by 山野晶舍</span></div></div>
+                <div class="product-media"><svg class="crystal-art" role="img" aria-label="黑曜石原石"><use href="#art-obsidian"></use></svg><span class="product-badge">桌面小摆件</span><button class="heart" aria-label="收藏">♡</button></div>
+                <div class="product-info"><div class="product-kicker">约 5cm · 哑光表面</div><div class="product-name">黑曜石小原石</div><div class="product-note">不抛亮光，摸起来有一点磨砂感</div><div class="product-bottom"><span class="price"><small>¥</small>218</span><span class="seller">大理 · 山野晶舍</span></div></div>
               </article>
               <article class="product-card" data-category="cluster" data-keywords="黄水晶 晶簇 财富 丰盛 日光">
-                <div class="product-media"><svg class="crystal-art" role="img" aria-label="黄水晶晶簇"><use href="#art-citrine"></use></svg><span class="product-badge">本周上新</span><button class="heart" aria-label="收藏">♡</button></div>
-                <div class="product-info"><div class="product-kicker">ABUNDANCE / 丰盛</div><div class="product-name">黄水晶 · 日光晶簇</div><div class="product-note">温暖明亮，为房间增加一点光</div><div class="product-bottom"><span class="price"><small>¥</small>288</span><span class="seller">by 清醒研究所</span></div></div>
+                <div class="product-media"><svg class="crystal-art" role="img" aria-label="黄水晶晶簇"><use href="#art-citrine"></use></svg><span class="product-badge">自然光实拍</span><button class="heart" aria-label="收藏">♡</button></div>
+                <div class="product-info"><div class="product-kicker">约 6cm · 颜色偏茶黄</div><div class="product-name">黄晶迷你簇</div><div class="product-note">不是亮黄色，室内看更像蜂蜜和茶</div><div class="product-bottom"><span class="price"><small>¥</small>288</span><span class="seller">苏州 · 小周选石</span></div></div>
               </article>
               <div class="empty-state" id="emptyState">没有找到对应的晶石，试试换个关键词吧。</div>
             </div>
           </div>
           <aside class="side-stack">
-            <div class="side-card dark"><h3>想更懂你的晶石？</h3><p>用 30 秒完成一份专属共振测试，发现此刻最适合你的那一颗。</p><a class="mini-link" href="#guide" id="quizLink">开始测试&nbsp; →</a></div>
-            <div class="week-list"><h3>本周热门上新</h3><div class="week-item"><svg class="crystal-art" role="img" aria-label="粉晶"><use href="#art-rose"></use></svg><div><b>粉晶 · 晨曦</b><span>关系连结 · ¥328</span></div></div><div class="week-item"><svg class="crystal-art" role="img" aria-label="黑曜石"><use href="#art-obsidian"></use></svg><div><b>黑曜石 · 夜行</b><span>守护边界 · ¥218</span></div></div><div class="week-item"><svg class="crystal-art" role="img" aria-label="黄水晶"><use href="#art-citrine"></use></svg><div><b>黄水晶 · 日光</b><span>丰盛好运 · ¥288</span></div></div></div>
+            <div class="side-card dark"><h3>还是不知道怎么选？</h3><p>告诉我们预算、使用场景和喜欢的颜色，给你几个简单建议，不替你下结论。</p><a class="mini-link" href="#guide" id="quizLink">做个小测试&nbsp; →</a></div>
+            <div class="week-list"><h3>店主刚刚摆上架</h3><div class="week-item"><svg class="crystal-art" role="img" aria-label="粉晶"><use href="#art-rose"></use></svg><div><b>淡粉晶手串</b><span>手围可改 · ¥328</span></div></div><div class="week-item"><svg class="crystal-art" role="img" aria-label="黑曜石"><use href="#art-obsidian"></use></svg><div><b>黑曜石小原石</b><span>桌面摆件 · ¥218</span></div></div><div class="week-item"><svg class="crystal-art" role="img" aria-label="黄水晶"><use href="#art-citrine"></use></svg><div><b>黄晶迷你簇</b><span>自然光实拍 · ¥288</span></div></div></div>
           </aside>
         </div>
         <div class="selection-note">
-          <div class="note-intro"><div class="kicker">CRYSTAL NOTES</div><h3>一份不焦虑的选石小抄</h3><p>晶石不是标准答案，好的选择应该让你更靠近自己的感受。</p></div>
+          <div class="note-intro"><div class="kicker">下单前看一眼</div><h3>认真确认这三件事</h3><p>比起听很多“功效”，这些信息更能帮你买得明白。</p></div>
           <div class="note-grid">
-            <div class="note-item"><b>看颜色</b><p>偏爱紫色，可能正在寻找安静；偏爱暖色，也许想为生活添一点亮度。</p></div>
-            <div class="note-item"><b>看触感</b><p>原石保留天然纹理，手链更适合随身陪伴，先想清楚使用场景。</p></div>
-            <div class="note-item"><b>看来源</b><p>关注尺寸、产地、处理方式与实拍图，买得喜欢，也买得安心。</p></div>
+            <div class="note-item"><b>尺寸</b><p>别只看特写。用手掌、硬币或尺子作参照，大小会直观很多。</p></div>
+            <div class="note-item"><b>天然痕迹</b><p>棉裂、矿缺和共生并不少见，店主应该提前说明并给出细节图。</p></div>
+            <div class="note-item"><b>照片光线</b><p>室内灯和自然光差别很大，介意色差时记得多要一张原图。</p></div>
           </div>
         </div>
       </section>
 
+      <section class="people-notes" aria-labelledby="peopleTitle">
+        <div class="section-heading"><div><h2 id="peopleTitle">试营业小纸条</h2><p>以下为示例留言，正式上线后会换成真实买家分享</p></div></div>
+        <div class="people-grid">
+          <article class="people-card"><p>“我最后没选所谓最适合我的，选了那颗颜色最像傍晚的。放在显示器旁边，工作累了看看就挺开心。”</p><div class="people-who"><div class="people-avatar">舒</div><div>示例 · 阿舒<span>刚开始买水晶两个月</span></div></div></article>
+          <article class="people-card"><p>“以前总先看功效，现在先问尺寸和有没有色差。收到之后和照片差不多，这件事比什么都重要。”</p><div class="people-who"><div class="people-avatar">林</div><div>示例 · 小林<span>偏爱原石和小摆件</span></div></div></article>
+          <article class="people-card"><p>“这串粉晶是送朋友的。店主帮我把手围改小了一点，还拍了包装视频，整个过程很踏实。”</p><div class="people-who"><div class="people-avatar">雨</div><div>示例 · 雨乔<span>第一次在线挑礼物</span></div></div></article>
+        </div>
+      </section>
+
       <section class="story-strip" id="join">
-        <div class="strip-copy"><div class="eyebrow">FOR CURATORS</div><h2>你也有一颗想被看见的晶石吗？</h2><p>加入 tunqigua，分享你的选石哲学与真实故事。</p></div>
-        <div class="strip-actions"><button class="primary-btn" id="sellerButton">成为主理人&nbsp; →</button><button class="ghost-btn" id="buyerButton">我是买家</button></div>
+        <div class="strip-copy"><div class="eyebrow">给认真选石头的人</div><h2>你也想开一间小小的晶石店吗？</h2><p>愿意写清尺寸、天然痕迹和来源，就欢迎来 tunqigua。</p></div>
+        <div class="strip-actions"><button class="primary-btn" id="sellerButton">申请成为主理人&nbsp; →</button><button class="ghost-btn" id="buyerButton">先以买家身份逛逛</button></div>
       </section>
     </main>
 
     <nav class="mobile-dock" aria-label="移动端快捷导航"><a class="active" href="#discover"><span>⌂</span>发现</a><a href="#guide"><span>◌</span>图鉴</a><a href="#market"><span>♧</span>集市</a><a href="#join"><span>✦</span>入驻</a></nav>
 
-    <footer><div><div class="footer-brand">tunqigua</div><p>让每一次选择，都回到你自己。</p></div><div class="footer-links"><a href="#discover">关于我们</a><a href="#guide">水晶图鉴</a><a href="#join">入驻合作</a><a href="#top">返回顶部 ↑</a></div></footer>
+    <footer><div><div class="footer-brand">tunqigua</div><p>看清楚，问明白，喜欢再带走。</p></div><div class="footer-links"><a href="#discover">关于我们</a><a href="#guide">水晶图鉴</a><a href="#join">入驻合作</a><a href="#top">返回顶部 ↑</a></div></footer>
   </div>
   <div class="toast" id="toast" role="status"></div>
   <script>
@@ -373,9 +392,9 @@
       document.querySelectorAll('.intent-card').forEach(item => item.classList.remove('selected'));
       card.classList.add('selected');
       const intent = card.dataset.intent;
-      intentHint.textContent = `为「${intent}」挑选的今日共振推荐 · 被认真挑选过的天然晶石`;
+      intentHint.textContent = `按「${intent}」先看看这些 · 尺寸和细节都写在卡片里`;
       document.getElementById('market').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      showToast(`已为你切换到「${intent}」灵感`);
+      showToast(`已经切到「${intent}」，慢慢看就好`);
     }));
 
     const products = [...document.querySelectorAll('.product-card')];
@@ -403,17 +422,17 @@
       event.stopPropagation();
       heart.classList.toggle('active');
       heart.textContent = heart.classList.contains('active') ? '♥' : '♡';
-      showToast(heart.classList.contains('active') ? '已收藏到你的晶室' : '已取消收藏');
+      showToast(heart.classList.contains('active') ? '已经收藏，回头慢慢看' : '已取消收藏');
     }));
     document.querySelectorAll('.product-card').forEach(card => card.addEventListener('click', () => {
       bag++; document.getElementById('bagCount').textContent = bag; showToast('已加入你的晶石袋');
     }));
     document.getElementById('startButton').addEventListener('click', () => document.getElementById('guide').scrollIntoView({ behavior: 'smooth' }));
-    document.getElementById('quizLink').addEventListener('click', () => showToast('共振测试已准备好，先选一个此刻的心情吧 ✦'));
-    document.getElementById('sellerButton').addEventListener('click', () => showToast('主理人入驻申请已开启，期待你的晶石故事 ✦'));
-    document.getElementById('buyerButton').addEventListener('click', () => showToast('欢迎回来，今天也慢慢挑选你的晶石'));
+    document.getElementById('quizLink').addEventListener('click', () => showToast('先选一个最接近你最近状态的选项吧'));
+    document.getElementById('sellerButton').addEventListener('click', () => showToast('入驻功能还在准备中，先记下你的兴趣啦'));
+    document.getElementById('buyerButton').addEventListener('click', () => showToast('那就先随便看看，喜欢再收藏'));
     document.getElementById('bagButton').addEventListener('click', () => showToast(bag ? `你的晶石袋里有 ${bag} 件心动好物` : '晶石袋还是空的，去发现一颗吧'));
-    document.getElementById('userButton').addEventListener('click', () => showToast('登录后可以收藏你的专属晶室'));
+    document.getElementById('userButton').addEventListener('click', () => showToast('登录功能暂未开放，爱心收藏可以先体验'));
     document.querySelectorAll('.mobile-dock a').forEach(link => link.addEventListener('click', () => {
       document.querySelectorAll('.mobile-dock a').forEach(item => item.classList.remove('active'));
       link.classList.add('active');
@@ -421,3 +440,4 @@
   </script>
 </body>
 </html>
+
